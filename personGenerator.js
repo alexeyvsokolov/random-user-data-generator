@@ -76,9 +76,11 @@ const personGenerator = {
 
 
      randomSurname: function() {
-
-        return this.randomValue(this.surnameJson);
-
+        if (this.person.gender == 'Мужчина') {
+            return this.randomValue(this.surnameJson);
+        } else {
+            return this.randomValue(this.surnameJson) + "а";
+        }
     },
 
 
