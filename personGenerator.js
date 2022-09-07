@@ -54,6 +54,10 @@ const personGenerator = {
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
 
+    randomGender: function() {
+        return Math.floor(Math.random()*2) == 1 ? this.GENDER_MALE : this.GENDER_FEMALE;
+    },
+
     randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min), // Метод отвечающий за случайную генерацию данных
 
     randomValue: function (json) {
@@ -78,7 +82,7 @@ const personGenerator = {
 
     getPerson: function () {
         this.person = {};
-        // this.person.gender = this.randomGender();
+        this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
         this.person.surname = this.randomSurname();
         return this.person;
