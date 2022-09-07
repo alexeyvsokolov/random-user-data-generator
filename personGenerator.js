@@ -67,9 +67,11 @@ const personGenerator = {
     },
 
     randomFirstName: function() {
-
-        return this.randomValue(this.firstNameMaleJson);
-
+        if (this.person.gender == 'Мужчина') {
+            return this.randomValue(this.firstNameMaleJson);
+        } else {
+            return this.randomValue(this.firstNameFemaleJson);
+        }
     },
 
 
