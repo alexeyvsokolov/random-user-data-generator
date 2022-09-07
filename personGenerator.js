@@ -89,7 +89,15 @@ const personGenerator = {
         }
     },
 
-     randomSurname: function() {
+    randomPatronymic: function() {
+        if (this.person.gender == 'Мужчина') {
+            return this.randomValue(this.patronymicJson) + "ич";
+        } else {
+            return this.randomValue(this.patronymicJson) + "на";
+        }
+    },
+
+    randomSurname: function() {
         if (this.person.gender == 'Мужчина') {
             return this.randomValue(this.surnameJson);
         } else {
@@ -100,8 +108,9 @@ const personGenerator = {
     getPerson: function () {
         this.person = {};
         this.person.gender = this.randomGender();
-        this.person.firstName = this.randomFirstName();
         this.person.surname = this.randomSurname();
+        this.person.firstName = this.randomFirstName();
+        this.person.patronymic = this.randomPatronymic();
         return this.person;
     }
 };
