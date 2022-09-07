@@ -50,6 +50,21 @@ const personGenerator = {
             "id_10": "Татьяна"
         }
     }`,
+    patronymicJson: `{
+        "count": 10,
+        "list": {
+            "id_1": "Владимиров",
+            "id_2": "Алексеев",
+            "id_3": "Сергеев",
+            "id_4": "Петров",
+            "id_5": "Андреев",
+            "id_6": "Михайлов",
+            "id_7": "Иванов",
+            "id_8": "Александров",
+            "id_9": "Анатольев",
+            "id_10": "Петров"
+        }
+    }`,
 
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
@@ -74,7 +89,6 @@ const personGenerator = {
         }
     },
 
-
      randomSurname: function() {
         if (this.person.gender == 'Мужчина') {
             return this.randomValue(this.surnameJson);
@@ -82,7 +96,6 @@ const personGenerator = {
             return this.randomValue(this.surnameJson) + "а";
         }
     },
-
 
     getPerson: function () {
         this.person = {};
