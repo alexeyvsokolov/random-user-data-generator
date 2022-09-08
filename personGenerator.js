@@ -65,6 +65,23 @@ const personGenerator = {
             "id_10": "Петров"
         }
     }`,
+    monthOfBirthJson: `{
+        "count": 10,
+        "list": {
+            "id_1": "января",
+            "id_2": "февраля",
+            "id_3": "марта",
+            "id_4": "апреля",
+            "id_5": "мая",
+            "id_6": "июня",
+            "id_7": "июля",
+            "id_8": "августа",
+            "id_9": "сетября",
+            "id_10": "октября"
+            "id_11": "ноября"
+            "id_12": "декабря"
+        }
+    }`,
 
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
@@ -103,6 +120,9 @@ const personGenerator = {
         } else {
             return this.randomValue(this.surnameJson) + "а";
         }
+    },
+
+    randomDate: function() {
     },
 
     getPerson: function () {
