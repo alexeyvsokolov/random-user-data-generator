@@ -66,7 +66,7 @@ const personGenerator = {
         }
     }`,
     monthOfBirthJson: `{
-        "count": 10,
+        "count": 12,
         "list": {
             "id_1": "января",
             "id_2": "февраля",
@@ -77,8 +77,8 @@ const personGenerator = {
             "id_7": "июля",
             "id_8": "августа",
             "id_9": "сетября",
-            "id_10": "октября"
-            "id_11": "ноября"
+            "id_10": "октября",
+            "id_11": "ноября",
             "id_12": "декабря"
         }
     }`,
@@ -123,7 +123,7 @@ const personGenerator = {
     },
 
     randomDate: function() {
-        return this.randomIntNumber(1950, 1990);
+        return this.randomIntNumber(1, 31) + " " + this.randomValue(this.monthOfBirthJson) + " " + this.randomIntNumber(1950, 1990) + " г.р.";
     },
 
     getPerson: function () {
