@@ -123,6 +123,7 @@ const personGenerator = {
     },
 
     randomDate: function() {
+        return this.randomIntNumber(1950, 1990);
     },
 
     getPerson: function () {
@@ -131,6 +132,7 @@ const personGenerator = {
         this.person.surname = this.randomSurname();
         this.person.firstName = this.randomFirstName();
         this.person.patronymic = this.randomPatronymic();
+        this.person.birthday = this.randomDate();
         return this.person;
     }
 };
