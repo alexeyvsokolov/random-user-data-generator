@@ -1,3 +1,5 @@
+const mon = Math.floor(Math.random() * 3);
+
 const personGenerator = {
     surnameJson: `{  
         "count": 15,
@@ -65,23 +67,6 @@ const personGenerator = {
             "id_10": "Петров"
         }
     }`,
-    monthOfBirthJson: `{
-        "count": 12,
-        "list": {
-            "id_1": "января",
-            "id_2": "февраля",
-            "id_3": "марта",
-            "id_4": "апреля",
-            "id_5": "мая",
-            "id_6": "июня",
-            "id_7": "июля",
-            "id_8": "августа",
-            "id_9": "сетября",
-            "id_10": "октября",
-            "id_11": "ноября",
-            "id_12": "декабря"
-        }
-    }`,
 
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
@@ -90,7 +75,7 @@ const personGenerator = {
         return Math.floor(Math.random()*2) == 1 ? this.GENDER_MALE : this.GENDER_FEMALE;
     },
 
-    randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min), // Метод отвечающий за случайную генерацию данных
+    randomIntNumber: (min = 0, max = 1) => Math.floor(Math.random() * (max - min + 1) + min), // Метод отвечающий за случайную генерацию данных
 
     randomValue: function (json) {
         const obj = JSON.parse(json);
@@ -122,9 +107,22 @@ const personGenerator = {
         }
     },
 
-    randomDate: function() {
-        return this.randomIntNumber(1, 31) + " " + this.randomValue(this.monthOfBirthJson) + " " + this.randomIntNumber(1950, 1990) + " г.р.";
+    randomMonth31: function getRandomMonth() {
+        let months = [`января`, `марта`, `мая`,	`июля`,	`августа`, `октября`, `декабря`];
+        let month = months[Math.floor(Math.random() * 7)];
+        return month;
     },
+    
+    randomMonth30: function getRandomMonth() {
+        let months = [`апреля`, `июня`, `сентября`, `ноября`];
+        let month = months[Math.floor(Math.random() * 4)];
+        return month;
+    },
+
+    randomMonthFeb28: function getRandomMonth() {
+		let month = `февраля`
+		return month;
+	},
 
     getPerson: function () {
         this.person = {};
@@ -132,7 +130,16 @@ const personGenerator = {
         this.person.surname = this.randomSurname();
         this.person.firstName = this.randomFirstName();
         this.person.patronymic = this.randomPatronymic();
-        this.person.birthday = this.randomDate();
+        if (mon === 0) {
+            this.person.month = this.randomMonth31();          
+            this.person.day = this.randomIntNumber(1, 31);
+        } else if (mon === 1) {
+            this.person.month = this.randomMonth30();          
+            this.person.day = this.randomIntNumber(1, 30);
+        } else if (mon === 2) {
+            this.person.month = this.randomMonthFeb28();          
+            this.person.day = this.randomIntNumber(1, 28);
+        }
         return this.person;
     }
 };
