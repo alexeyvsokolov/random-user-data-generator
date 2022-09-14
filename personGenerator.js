@@ -124,6 +124,10 @@ const personGenerator = {
 		return month;
 	},
 
+    rendomYear: function() {
+        return this.randomIntNumber(1950, 1990) + " г.р.";
+    },
+
     getPerson: function () {
         this.person = {};
         this.person.gender = this.randomGender();
@@ -140,6 +144,7 @@ const personGenerator = {
             this.person.month = this.randomMonthFeb28();          
             this.person.day = this.randomIntNumber(1, 28);
         }
+        this.person.year = this.rendomYear(1950, 1990);
         return this.person;
     }
 };

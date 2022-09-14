@@ -8,6 +8,6 @@ window.onload = function()
     document.getElementById('genderOutput').innerText = initPerson.gender;
     document.getElementById('birthDayOutput').innerText = initPerson.day;
     document.getElementById('birthMonthOutput').innerText = initPerson.month;
-    document.getElementById('birthYearOutput').innerText = initPerson.birthday;
+    document.getElementById('birthYearOutput').innerText = initPerson.year;
 };
 
