@@ -68,8 +68,8 @@ const personGenerator = {
         }
     }`,
 
-    GENDER_MALE: 'Мужчина',
-    GENDER_FEMALE: 'Женщина',
+    GENDER_MALE: 'Мужчина, ',
+    GENDER_FEMALE: 'Женщина, ',
 
     randomGender: function() {
         return Math.floor(Math.random()*2) == 1 ? this.GENDER_MALE : this.GENDER_FEMALE;
@@ -84,7 +84,7 @@ const personGenerator = {
     },
 
     randomFirstName: function() {
-        if (this.person.gender == 'Мужчина') {
+        if (this.person.gender == 'Мужчина, ') {
             return this.randomValue(this.firstNameMaleJson);
         } else {
             return this.randomValue(this.firstNameFemaleJson);
@@ -92,7 +92,7 @@ const personGenerator = {
     },
 
     randomPatronymic: function() {
-        if (this.person.gender == 'Мужчина') {
+        if (this.person.gender == 'Мужчина, ') {
             return this.randomValue(this.patronymicJson) + "ич";
         } else {
             return this.randomValue(this.patronymicJson) + "на";
@@ -100,26 +100,26 @@ const personGenerator = {
     },
 
     randomSurname: function() {
-        if (this.person.gender == 'Мужчина') {
+        if (this.person.gender == 'Мужчина, ') {
             return this.randomValue(this.surnameJson);
         } else {
             return this.randomValue(this.surnameJson) + "а";
         }
     },
 
-    randomMonth31: function getRandomMonth() {
+    randomMonth31: function randomMonth() {
         let months = [`января`, `марта`, `мая`,	`июля`,	`августа`, `октября`, `декабря`];
         let month = months[Math.floor(Math.random() * 7)];
         return month;
     },
     
-    randomMonth30: function getRandomMonth() {
+    randomMonth30: function randomMonth() {
         let months = [`апреля`, `июня`, `сентября`, `ноября`];
         let month = months[Math.floor(Math.random() * 4)];
         return month;
     },
 
-    randomMonthFeb28: function getRandomMonth() {
+    randomMonthFeb28: function randomMonth() {
 		let month = `февраля`
 		return month;
 	},
