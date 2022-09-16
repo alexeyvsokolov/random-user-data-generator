@@ -12,3 +12,6 @@ window.onload = function()
     document.getElementById('professionOutput').innerText = initPerson.profession;
 };
 
+document.getElementById('generation').addEventListener('click', function() {
+    window.location.reload();
+});
