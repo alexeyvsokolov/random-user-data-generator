@@ -160,6 +160,14 @@ const personGenerator = {
         return this.randomIntNumber(1950, 1990) + " г.р.";
     },
 
+    randomРrofession: function() {
+        if (this.person.gender == 'Мужчина, ') {
+            return this.randomValue(this.professionMaleJson);
+        } else {
+            return this.randomValue(this.professionFemaleJson);
+        }
+    },
+
     getPerson: function () {
         this.person = {};
         this.person.gender = this.randomGender();
@@ -177,6 +185,7 @@ const personGenerator = {
             this.person.day = this.randomIntNumber(1, 28);
         }
         this.person.year = this.rendomYear(1950, 1990);
+        this.person.profession = this.randomРrofession();
         return this.person;
     }
 };

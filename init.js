@@ -9,5 +9,6 @@ window.onload = function()
     document.getElementById('birthDayOutput').innerText = initPerson.day;
     document.getElementById('birthMonthOutput').innerText = initPerson.month;
     document.getElementById('birthYearOutput').innerText = initPerson.year;
+    document.getElementById('professionOutput').innerText = initPerson.profession;
 };
 
