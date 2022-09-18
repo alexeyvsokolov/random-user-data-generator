@@ -24,13 +24,13 @@ document.getElementById('generation').addEventListener('click', function() {
 });
 
 document.getElementById('clear').addEventListener('click', function() {
-    document.getElementById('surnameOutput').innerText = '';
-    document.getElementById('firstNameOutput').innerText = '';
-    document.getElementById('patronymicOutput').innerText = '';
-    document.getElementById('genderOutput').innerText = '';
-    document.getElementById('birthDayOutput').innerText = '';
-    document.getElementById('birthMonthOutput').innerText = '';
-    document.getElementById('birthYearOutput').innerText = '';
-    document.getElementById('professionOutput').innerText = '';
+    document.getElementById('surnameOutput').innerText = 'Фамилия';
+    document.getElementById('firstNameOutput').innerText = 'Имя';
+    document.getElementById('patronymicOutput').innerText = 'Отчество';
+    document.getElementById('genderOutput').innerText = 'Пол, ';
+    document.getElementById('birthDayOutput').innerText = 'Число, ';
+    document.getElementById('birthMonthOutput').innerText = 'месяц, ';
+    document.getElementById('birthYearOutput').innerText = 'год рождения, ';
+    document.getElementById('professionOutput').innerText = 'Профессия';
 }
 );
