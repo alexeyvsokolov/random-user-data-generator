@@ -1,4 +1,4 @@
-// window.onload = function()
+// window.onload = function() // Функция генерации данных пользователей, путем перезагрузки страницы (отключена в проекте).
 // {
 //     const initPerson = personGenerator.getPerson();
 //     document.getElementById('surnameOutput').innerText = initPerson.surname;
@@ -11,7 +11,7 @@
 //     document.getElementById('professionOutput').innerText = initPerson.profession;
 // };
 
-document.getElementById('generation').addEventListener('click', function() {
+document.getElementById('generation').addEventListener('click', function() { // Метод для кнопки "Генерация"; генерирует данные пользователей
     const initPerson = personGenerator.getPerson();
     document.getElementById('surnameOutput').innerText = initPerson.surname;
     document.getElementById('firstNameOutput').innerText = initPerson.firstName;
@@ -23,7 +23,7 @@ document.getElementById('generation').addEventListener('click', function() {
     document.getElementById('professionOutput').innerText = initPerson.profession;
 });
 
-document.getElementById('clear').addEventListener('click', function() {
+document.getElementById('clear').addEventListener('click', function() { // Метод для кнопки "Очистить"; вместо данных пользователей появляются параметры данных
     document.getElementById('surnameOutput').innerText = 'Фамилия';
     document.getElementById('firstNameOutput').innerText = 'Имя';
     document.getElementById('patronymicOutput').innerText = 'Отчество';
