@@ -67,7 +67,6 @@ const personGenerator = {
             "id_10": "Петров"
         }
     }`,
-
     professionMaleJson: `{
         "count": 10,
         "list": {
@@ -83,7 +82,6 @@ const personGenerator = {
             "id_10": "Полицейский"
         }
     }`,
-
     professionFemaleJson: `{
         "count": 10,
         "list": {
@@ -168,20 +166,20 @@ const personGenerator = {
         }
     },
 
-    getPerson: function () {
+    getPerson: function() {
         this.person = {};
         this.person.gender = this.randomGender();
         this.person.surname = this.randomSurname();
         this.person.firstName = this.randomFirstName();
         this.person.patronymic = this.randomPatronymic();
         if (mon === 0) {
-            this.person.month = this.randomMonth31();          
+            this.person.month = this.randomMonth31();
             this.person.day = this.randomIntNumber(1, 31); // Генерация чисел в месяцах, в которых 31 день
         } else if (mon === 1) {
-            this.person.month = this.randomMonth30();          
+            this.person.month = this.randomMonth30();
             this.person.day = this.randomIntNumber(1, 30); // Генерация чисел в месяцах, в которых 30 деней
         } else if (mon === 2) {
-            this.person.month = this.randomMonthFeb28();          
+            this.person.month = this.randomMonthFeb28();
             this.person.day = this.randomIntNumber(1, 28); // Генерация чисел в месяце Февраль, в котором 28 дней
         }
         this.person.year = this.rendomYear(1950, 1990);
